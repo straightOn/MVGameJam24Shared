@@ -2,6 +2,8 @@ extends Node
 
 class_name RpcBase
 
+const ObjectTypeResource = preload("res://shared/object_type.gd")
+
 # class defines all required methods client and server side
 # will be inherited by client- and server-connection-handler and implement only the required functions
 # params in (1,2,3)
@@ -24,7 +26,7 @@ func receive_object_position_update(id: int, position: Vector2):
 	print_debug("receive_object_position_update called with data: ", id, position)
 
 @rpc
-func receive_object_created(id: int, type: String, initial_position: Vector2):
+func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2):
 	print_debug("receive_object_created called with data", id, type, initial_position)
 
 @rpc
@@ -35,3 +37,12 @@ func receive_object_removed(id: int):
 @rpc
 func move_action(input: Vector2):
 	print_debug("move_action called with data: ", input)
+	
+@rpc
+func join_game():
+	print_debug("join_game called")
+
+@rpc
+func receive_game_state(id: int):
+	print_debug("receive_game_state called")
+	

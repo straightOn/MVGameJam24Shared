@@ -1,0 +1,1 @@
+enum Phase { DAY, NIGHT }

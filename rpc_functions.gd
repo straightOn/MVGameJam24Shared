@@ -46,3 +46,27 @@ func join_game():
 func receive_game_state(active_connections: int, max_connections: int):
 	print_debug("receive_game_state called: ", active_connections, max_connections)
 	
+@rpc("any_peer")
+func receive_next_wave(wave: int):
+	print_debug("receive_next_wave called: ", wave)
+	
+@rpc("any_peer")
+func receive_player_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
+	print_debug("player_takes_damage called: ", id, damage, newHp, newMaxHp)
+	
+@rpc("any_peer")
+func receive_enemy_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
+	print_debug("enemy_takes_damage called: ", id, damage, newHp, newMaxHp)
+	
+@rpc("any_peer")
+func receive_switch_player_phase(id: int, phase: int):
+	print_debug("switch_player_phase called: ", phase)
+	
+@rpc("any_peer")
+func receive_level_up(id: int, level: int, newHp: float, newMaxHp: float):
+	print_debug("level_up called: ", id, level, newHp, newMaxHp)
+	
+@rpc("any_peer")
+func receive_remaining_phase_time(id: int, seconds: float):
+	print_debug("remaining_phase_time called: ", id, seconds)
+	

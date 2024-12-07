@@ -62,9 +62,9 @@ func receive_enemy_takes_damage(id: int, damage: float, newHp: float, newMaxHp: 
 	print_debug("receive_enemy_takes_damage called: ", id, damage, newHp, newMaxHp)
 	
 @rpc("any_peer")
-func receive_object_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
-	print_debug("receive_object_takes_damage called: ", id, damage, newHp, newMaxHp)
-
+func receive_object_takes_damage(id: int, damage: float, newHp: float):
+	print_debug("receive_object_takes_damage called: ", id, damage, newHp)
+	
 @rpc("any_peer")
 func receive_object_attacks(id: int, direction: Vector2):
 	print_debug("receive_object_attacks called: ", id, direction)

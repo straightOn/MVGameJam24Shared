@@ -28,7 +28,7 @@ func receive_object_position_update(id: int, position: Vector2, direction: Vecto
 	pass
 
 @rpc
-func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2):
+func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2, label: String):
 	#print_debug("receive_object_created called with data", id, type, initial_position)
 	pass 
 
@@ -43,8 +43,8 @@ func move_action(input: Vector2):
 	pass
 	
 @rpc
-func join_game():
-	print_debug("join_game called")
+func join_game(label: String):
+	print_debug("join_game called", label)
 
 @rpc
 func receive_game_state(active_connections: int, max_connections: int):
@@ -67,24 +67,12 @@ func receive_player_phase_remaining(id: int, remaining: int ):
 	print_debug("receive_player_phase_remaining called: ", id, remaining)
 	
 @rpc("any_peer")
-func receive_player_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
-	print_debug("receive_player_takes_damage called: ", id, damage, newHp, newMaxHp)
-	
-@rpc("any_peer")
-func receive_enemy_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
-	print_debug("receive_enemy_takes_damage called: ", id, damage, newHp, newMaxHp)
-	
-@rpc("any_peer")
 func receive_object_takes_damage(id: int, damage: float, newHp: float):
 	print_debug("receive_object_takes_damage called: ", id, damage, newHp)
 	
 @rpc("any_peer")
 func receive_object_attacks(id: int, direction: Vector2):
 	print_debug("receive_object_attacks called: ", id, direction)
-	
-@rpc("any_peer")
-func receive_switch_player_phase(id: int, phase: int):
-	print_debug("receive_switch_player_phase called: ", phase)
 	
 @rpc("any_peer")
 func receive_level_up(id: int, level: int, newHp: float, newMaxHp: float):

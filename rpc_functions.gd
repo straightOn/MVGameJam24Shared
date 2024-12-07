@@ -23,7 +23,8 @@ const ObjectTypeResource = preload("res://shared/object_type.gd")
 # client functions
 @rpc
 func receive_object_position_update(id: int, position: Vector2, direction: Vector2):
-	print_debug("receive_object_position_update called with data: ", id, position, direction)
+	#print_debug("receive_object_position_update called with data: ", id, position, direction)
+	pass
 
 @rpc
 func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2):
@@ -36,7 +37,8 @@ func receive_object_removed(id: int):
 # server functions
 @rpc
 func move_action(input: Vector2):
-	print_debug("move_action called with data: ", input)
+	#print_debug("move_action called with data: ", input)
+	pass
 	
 @rpc
 func join_game():
@@ -52,15 +54,15 @@ func receive_next_wave(wave: int):
 	
 @rpc("any_peer")
 func receive_player_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
-	print_debug("player_takes_damage called: ", id, damage, newHp, newMaxHp)
+	print_debug("receive_player_takes_damage called: ", id, damage, newHp, newMaxHp)
 	
 @rpc("any_peer")
 func receive_enemy_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
-	print_debug("enemy_takes_damage called: ", id, damage, newHp, newMaxHp)
+	print_debug("receive_enemy_takes_damage called: ", id, damage, newHp, newMaxHp)
 	
 @rpc("any_peer")
 func receive_switch_player_phase(id: int, phase: int):
-	print_debug("switch_player_phase called: ", phase)
+	print_debug("receive_switch_player_phase called: ", phase)
 	
 @rpc("any_peer")
 func receive_level_up(id: int, level: int, newHp: float, newMaxHp: float):

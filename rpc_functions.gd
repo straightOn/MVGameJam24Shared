@@ -1,6 +1,4 @@
-extends Node
-
-class_name RpcBase
+class_name RpcBase extends Node
 
 const ObjectTypeResource = preload("res://shared/object_type.gd")
 

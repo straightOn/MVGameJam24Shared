@@ -3,6 +3,7 @@ extends Node
 class_name RpcBase
 
 const ObjectTypeResource = preload("res://shared/object_type.gd")
+const GamePhaseResource = preload("res://shared/game_phase.gd")
 
 # class defines all required methods client and server side
 # will be inherited by client- and server-connection-handler and implement only the required functions
@@ -56,6 +57,14 @@ func receive_next_wave(wave: int):
 @rpc("any_peer")
 func receive_remaining_time(remaining: int):
 	print_debug("receive_remaining_time called: ", remaining)
+
+@rpc("any_peer")
+func receive_new_player_phase(id: int, new_phase: GamePhaseResource.Phase ):
+	print_debug("receive_new_player_phase called: ", id, new_phase)
+
+@rpc("any_peer")
+func receive_player_phase_remaining(id: int, remaining: int ):
+	print_debug("receive_player_phase_remaining called: ", id, remaining)
 	
 @rpc("any_peer")
 func receive_player_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):

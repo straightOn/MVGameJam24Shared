@@ -63,6 +63,10 @@ func receive_enemy_takes_damage(id: int, damage: float, newHp: float, newMaxHp: 
 @rpc("any_peer")
 func receive_object_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
 	print_debug("receive_object_takes_damage called: ", id, damage, newHp, newMaxHp)
+
+@rpc("any_peer")
+func receive_object_attacks(id: int, direction: Vector2):
+	print_debug("receive_object_attacks called: ", id, direction)
 	
 @rpc("any_peer")
 func receive_switch_player_phase(id: int, phase: int):

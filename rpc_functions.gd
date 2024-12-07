@@ -94,3 +94,8 @@ func receive_level_up(id: int, level: int, newHp: float, newMaxHp: float):
 func receive_remaining_phase_time(id: int, seconds: float):
 	print_debug("remaining_phase_time called: ", id, seconds)
 	
+@rpc("any_peer")
+func receive_game_over(id: int, kills: int, alive_time: int):
+	print_debug("receive_game_over called: ", id, kills, alive_time)
+	
+	

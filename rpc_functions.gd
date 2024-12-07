@@ -22,8 +22,8 @@ const ObjectTypeResource = preload("res://shared/object_type.gd")
 
 # client functions
 @rpc
-func receive_object_position_update(id: int, position: Vector2):
-	print_debug("receive_object_position_update called with data: ", id, position)
+func receive_object_position_update(id: int, position: Vector2, direction: Vector2):
+	print_debug("receive_object_position_update called with data: ", id, position, direction)
 
 @rpc
 func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2):

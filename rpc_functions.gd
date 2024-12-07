@@ -43,6 +43,6 @@ func join_game():
 	print_debug("join_game called")
 
 @rpc
-func receive_game_state(id: int):
-	print_debug("receive_game_state called")
+func receive_game_state(active_connections: int, max_connections: int):
+	print_debug("receive_game_state called: ", active_connections, max_connections)
 	

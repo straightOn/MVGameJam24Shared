@@ -53,6 +53,10 @@ func receive_next_wave(wave: int):
 	print_debug("receive_next_wave called: ", wave)
 	
 @rpc("any_peer")
+func receive_remaining_time(remaining: int):
+	print_debug("receive_remaining_time called: ", remaining)
+	
+@rpc("any_peer")
 func receive_player_takes_damage(id: int, damage: float, newHp: float, newMaxHp: float):
 	print_debug("receive_player_takes_damage called: ", id, damage, newHp, newMaxHp)
 	

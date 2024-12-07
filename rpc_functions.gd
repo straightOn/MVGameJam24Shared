@@ -30,7 +30,7 @@ func receive_object_position_update(id: int, position: Vector2, direction: Vecto
 @rpc
 func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2):
 	#print_debug("receive_object_created called with data", id, type, initial_position)
-	pass
+	pass 
 
 @rpc
 func receive_object_removed(id: int):

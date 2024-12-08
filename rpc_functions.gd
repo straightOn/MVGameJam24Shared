@@ -47,7 +47,7 @@ func join_game(label: String):
 	print_debug("join_game called", label)
 
 @rpc
-func receive_game_state(active_connections: int, max_connections: int):
+func receive_game_state(peer_id: int, active_connections: int, max_connections: int):
 	print_debug("receive_game_state called: %d" % active_connections)
 	
 @rpc("any_peer")

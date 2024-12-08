@@ -28,7 +28,7 @@ func receive_object_position_update(id: int, position: Vector2, direction: Vecto
 	pass
 
 @rpc
-func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2, label: String):
+func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initial_position: Vector2, hp: float, max_hp: float, label: String):
 	#print_debug("receive_object_created called with data", id, type, initial_position)
 	pass 
 

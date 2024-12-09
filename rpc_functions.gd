@@ -34,7 +34,8 @@ func receive_object_created(id: int, type: ObjectTypeResource.ObjectType, initia
 
 @rpc
 func receive_object_removed(id: int):
-	print_debug("receive_object_removed called with data", id)
+	#print_debug("receive_object_removed called with data", id)
+	pass
 
 # server functions
 @rpc
@@ -44,46 +45,57 @@ func move_action(input: Vector2):
 	
 @rpc
 func join_game(label: String):
-	print_debug("join_game called", label)
+	#print_debug("join_game called", label)
+	pass
 
 @rpc
 func receive_game_state(peer_id: int, active_connections: int, max_connections: int):
-	print_debug("receive_game_state called: %d" % active_connections)
+	#print_debug("receive_game_state called: %d" % active_connections)
+	pass
 	
 @rpc("any_peer")
 func receive_next_wave(wave: int):
-	print_debug("receive_next_wave called: ", wave)
+	#print_debug("receive_next_wave called: ", wave)
+	pass
 	
 @rpc("any_peer")
 func receive_remaining_time(remaining: int):
-	print_debug("receive_remaining_time called: ", remaining)
+	#print_debug("receive_remaining_time called: ", remaining)
+	pass
 
 @rpc("any_peer")
 func receive_new_player_phase(id: int, new_phase: GamePhaseResource.Phase ):
-	print_debug("receive_new_player_phase called: ", id, new_phase)
+	#print_debug("receive_new_player_phase called: ", id, new_phase)
+	pass
 
 @rpc("any_peer")
 func receive_player_phase_remaining(id: int, remaining: int ):
-	print_debug("receive_player_phase_remaining called: ", id, remaining)
+	#print_debug("receive_player_phase_remaining called: ", id, remaining)
+	pass
 	
 @rpc("any_peer")
 func receive_object_takes_damage(id: int, damage: float, newHp: float):
-	print_debug("receive_object_takes_damage called: ", id, damage, newHp)
+	#print_debug("receive_object_takes_damage called: ", id, damage, newHp)
+	pass
 	
 @rpc("any_peer")
 func receive_object_attacks(id: int, direction: Vector2):
-	print_debug("receive_object_attacks called: ", id, direction)
+	#print_debug("receive_object_attacks called: ", id, direction)
+	pass
 	
 @rpc("any_peer")
 func receive_level_up(id: int, level: int, newHp: float, newMaxHp: float):
-	print_debug("level_up called: ", id, level, newHp, newMaxHp)
+	#print_debug("level_up called: ", id, level, newHp, newMaxHp)
+	pass
 	
 @rpc("any_peer")
 func receive_remaining_phase_time(id: int, seconds: float):
-	print_debug("remaining_phase_time called: ", id, seconds)
+	#print_debug("remaining_phase_time called: ", id, seconds)
+	pass
 	
 @rpc("any_peer")
 func receive_game_over(id: int, kills: int, alive_time: int):
-	print_debug("receive_game_over called: ", id, kills, alive_time)
+	#print_debug("receive_game_over called: ", id, kills, alive_time)
+	pass
 	
 	

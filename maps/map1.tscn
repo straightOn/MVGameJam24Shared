@@ -891,18 +891,24 @@ offset_right = 2252.0
 offset_bottom = 1246.0
 
 [node name="Piller1" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Shape" type="CollisionShape2D" parent="Piller1"]
 position = Vector2(48.5, 164)
 shape = SubResource("RectangleShape2D_yu3el")
 
 [node name="Piller2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Shape" type="CollisionShape2D" parent="Piller2"]
 position = Vector2(416, 516)
 shape = SubResource("RectangleShape2D_yu3el")
 
 [node name="Piller3" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Shape" type="CollisionShape2D" parent="Piller3"]
 position = Vector2(1008, 260)
